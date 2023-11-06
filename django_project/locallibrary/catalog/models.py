@@ -29,7 +29,13 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
 
+    def display_genre(self):
+        genres = self.genre.all()[:3]
+        genre_names = [genre.name for genre in genres]
+        genre_list = ', '.join(genre_names)
+        return genre_list.split(',')
 
+    display_genre.short_description = 'Genre'
 
     def __str__(self):
 
