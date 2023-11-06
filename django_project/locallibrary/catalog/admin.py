@@ -26,7 +26,15 @@ class BookAdmin(admin.ModelAdmin):
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('status', 'due_back')
     list_display =  ('status', 'due_back','id','book')
+<<<<<<< HEAD
     fieldsets = (
         ('General', {'fields': ('book', 'imprint', 'id')}),
         ('Availability', {'fields': ('status', 'due_back')}),
     )
+=======
+   
+    fieldsets = [
+        ('General', {'fields': ('book', 'imprint', 'id')}),
+        ('Availability', {'fields': ('status', 'due_back')}),
+    ]
+>>>>>>> ec60141 (Add files via upload)
