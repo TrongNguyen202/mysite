@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.http import HttpResponse
@@ -7,6 +8,10 @@ from django.template.response import TemplateResponse
 
 
 from django.views import generic
+=======
+from django.shortcuts import render
+from .models import Book, Author, BookInstance, Genre
+>>>>>>> b2b31f4 (Creating ourhome page)
 # Create your views here.
 def index(request):
     """View function for home page of site."""
@@ -21,6 +26,7 @@ def index(request):
                'num_instances_available': num_instances_available,
                'num_authors': num_authors, }
     # Render the HTML template index.html with the data in the context variable
+<<<<<<< HEAD
     return render(request, 'index.html', context=context)
 
 
@@ -66,3 +72,6 @@ def BookDetailView(request, id):
     'book': book,
   }
   return HttpResponse(template.render(context, request))
+=======
+    return render(request, 'index.html', context=context)
+>>>>>>> b2b31f4 (Creating ourhome page)
