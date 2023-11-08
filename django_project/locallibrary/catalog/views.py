@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import Book, Author, BookInstance, Genre
 from django.views.generic import ListView
 from django.template.response import TemplateResponse
-
+from django.views.generic import DetailView
 
 from django.views import generic
 # Create your views here.
@@ -12,6 +12,8 @@ def index(request):
     """View function for home page of site."""
     # Generate counts of some of the main objects
     num_books = Book.objects.all().count()
+    num_visits = request.session.get('num_visits', 1)
+    request.session['num_visits'] = num_visits + 1
     num_instances = BookInstance.objects.all().count()
     # Available books (status = 'a')
     num_instances_available=BookInstance.objects.filter(status__exact='a').count()
@@ -19,7 +21,9 @@ def index(request):
     context = {'num_books': num_books,
                'num_instances': num_instances,
                'num_instances_available': num_instances_available,
-               'num_authors': num_authors, }
+               'num_authors': num_authors,
+               'num_visits':num_visits,
+               }
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
@@ -37,28 +41,6 @@ class BookListView(ListView):
 
 
 
-# def BookDetailView(request):
-#     book = get_object_or_404(Book, pk=request.kwargs['pk'])
-#
-#     return render(request, 'book_detail.html', context={'book': book})
-
-
-# class BookDetailView(generic.DetailView):
-#     model = Book
-#
-#     def book_detail_view(request, primary_key):
-#         book = get_object_or_404(Book, pk=primary_key)
-#         template = loader.get_template('book_detail.html')
-#         return render(request, template, context={'book': book})
-
-# def BookDetailView(request,primary_key):
-#     book = Book.objects.get(id=id)
-#     context = {
-#         'book':book
-#     }
-#
-#     return render(request, 'book_detail.html', context=context)
-
 def BookDetailView(request, id):
   book = Book.objects.get(id=id)
   template = loader.get_template('book_detail.html')
@@ -66,3 +48,6 @@ def BookDetailView(request, id):
     'book': book,
   }
   return HttpResponse(template.render(context, request))
+
+
+
