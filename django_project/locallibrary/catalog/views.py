@@ -5,8 +5,10 @@ from .models import Book, Author, BookInstance, Genre
 from django.views.generic import ListView
 from django.template.response import TemplateResponse
 from django.views.generic import DetailView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
+
+
 # Create your views here.
 def index(request):
     """View function for home page of site."""
@@ -48,6 +50,17 @@ def BookDetailView(request, id):
     'book': book,
   }
   return HttpResponse(template.render(context, request))
+# class MyView(LoginRequiredMixin, View):
+#     login_url = '/login/'
+#     redirect_field_name = '/'
 
 
-
+class LoanedBooksByUserListView(ListView):
+    model = BookInstance
+    context_object_name = 'bookinstance_list'
+    queryset = BookInstance.objects.all()
+    template_name = 'catalog/bookinstance_list_borrowed_user.html'
+    def get_context_data(self, **kwargs):
+        context = super(LoanedBooksByUserListView, self).get_context_data(**kwargs)
+        context['some_data'] = 'This is just some data'
+        return context
