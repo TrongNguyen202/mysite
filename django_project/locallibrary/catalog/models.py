@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 import uuid
+from django.contrib.auth.models import User
+from datetime import date
 # Create your models here.
 
 
@@ -44,7 +46,7 @@ class Book(models.Model):
             return self.title
     def get_absolute_url(self):
             """Returns the url to access a detail record for this book."""
-            return reverse('book-detail', args=[str(self.id)])
+            return reverse('book_detail', args=[str(self.id)])
 
 
 
@@ -57,14 +59,22 @@ class BookInstance(models.Model):
     due_back = models.DateField(null=True, blank=True)
     LOAN_STATUS = (('m', 'Maintenance'),('o', 'On loan'),('a', 'Available'),('r', 'Reserved'),)
     status = models.CharField(max_length=1,choices=LOAN_STATUS,blank=True,default='m',help_text='Book availability',)
+    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
+    @property
+
+    def is_overdue(self):
+        if self.due_back and date.today() > self.due_back:
+            return True
+
+        return False
 
     class Meta:
 
         ordering = ['due_back']
-        def __str__(self):
-            """String for representing the Model object."""
-            return f'{self.id} ({self.book.title})'
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.id} ({self.book.title})'
 
 
 
