@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-20 11:14+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\catalog\templates\base_generic.html:22
+msgid "Home"
+msgstr "Nhà"
+
+#: .\catalog\templates\base_generic.html:25
+msgid "All books"
+msgstr "Tất cả sách"
+
+#: .\catalog\templates\base_generic.html:28
+msgid "All authors"
+msgstr "Tất cả tác giả"
+
+#: .\catalog\templates\base_generic.html:43
+msgid "previous"
+msgstr "trước"
+
+#: .\catalog\templates\base_generic.html:44
+msgid "Page"
+msgstr "Trang"
+
+#: .\catalog\templates\base_generic.html:45
+msgid "next"
+msgstr "Sau"
+
+#: .\catalog\templates\book_detail.html:4
+msgid "Title:"
+msgstr "Tiêu đề"
+
+#: .\catalog\templates\book_detail.html:6
+msgid "Author:"
+msgstr "Tác giả"
+
+#: .\catalog\templates\book_detail.html:11
+msgid "Summary:"
+msgstr "Tóm lại"
+
+#: .\catalog\templates\book_detail.html:14
+msgid "ISBN:"
+msgstr "ISBN"
+
+#: .\catalog\templates\book_detail.html:17
+msgid "Language:"
+msgstr "Ngôn ngữ"
+
+#: .\catalog\templates\book_detail.html:20
+msgid "Genre:"
+msgstr "Loại"
+
+#: .\catalog\templates\book_detail.html:24
+msgid "Copies"
+msgstr "Bản sao"
+
+#: .\catalog\templates\book_detail.html:34
+msgid "Due to be returned:"
+msgstr "NGày trả về"
+
+#: .\catalog\templates\book_detail.html:38
+msgid "Imprint:"
+msgstr "xuất bản"
+
+#: .\catalog\templates\book_detail.html:41
+msgid "Id:"
+msgstr "id"
+
+#: .\catalog\templates\book_list.html:4
+msgid "Book List"
+msgstr "danh sách sách"
+
+#: .\catalog\templates\book_list.html:12
+msgid "There are no books in the library."
+msgstr "Không có sách nào trong thư viên"
+
+#: .\catalog\templates\index.html:4
+msgid "Local Library Home"
+msgstr "Trang chủ thư viện"
+
+#: .\catalog\templates\index.html:5
+msgid "Welcome to LocalLibrary, a website developed by"
+msgstr "Chào mừng đến với thư viện, website này được phát triển bởi"
+
+#: .\catalog\templates\index.html:5
+msgid "Mozilla Developer Network"
+msgstr "Mạng lưới Nhà phát triển Mozilla"
+
+#: .\catalog\templates\index.html:6
+msgid "Dynamic content"
+msgstr "nội dung động"
+
+#: .\catalog\templates\index.html:7
+msgid "The library has the following record counts:"
+msgstr "Thư viện đã nhận số lượt"
+
+#: .\catalog\templates\index.html:9
+#, fuzzy
+#| msgid "Book List"
+msgid "Books:"
+msgstr "danh sách sách"
+
+#: .\catalog\templates\index.html:10
+msgid "instances:"
+msgstr "Các sách mượn"
+
+#: .\catalog\templates\index.html:11
+msgid "Copies available:"
+msgstr "bản coppy còn"
+
+#: .\catalog\templates\index.html:12
+#, fuzzy
+#| msgid "Author:"
+msgid "Authors:"
+msgstr "Tác giả"
+
+#: .\catalog\templates\index.html:14
+msgid "You have visited this page"
+msgstr "Bạn đã tham gia trang"
