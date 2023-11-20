@@ -19,6 +19,7 @@ def index(request):
                'num_authors': num_authors,
                'num_visits':num_visits,
                }
+    
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 class BookListView(ListView):
@@ -36,3 +37,9 @@ def book_detail(request, id):
     'book': book,
   }
   return HttpResponse(template.render(context, request))
+
+class LoanedBooksByUserListView(ListView):
+    model = BookInstance
+    context_object_name = 'bookinstance_list'
+    queryset = BookInstance.objects.all()
+    template_name = 'bookinstance_list_borrowed_user.html'
