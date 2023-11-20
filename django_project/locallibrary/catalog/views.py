@@ -32,3 +32,9 @@ def book_detail(request, id):
     'book': book,
   }
   return HttpResponse(template.render(context, request))
+
+class LoanedBooksByUserListView(ListView):
+    model = BookInstance
+    context_object_name = 'bookinstance_list'
+    queryset = BookInstance.objects.all()
+    template_name = 'bookinstance_list_borrowed_user.html'
