@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-
+"POT-Creation-Date: 2023-11-21 10:39+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\catalog\form.py:15 .\catalog\form.py:27
+msgid "Invalid date - renewal in past"
+msgstr "Ngày không hợp lệ - gia hạn trong quá khứ"
+
+#: .\catalog\form.py:18 .\catalog\form.py:30
+msgid "Invalid date - renewal more than 4 weeks ahead"
+msgstr "Ngày không hợp lệ - gia hạn trước hơn 4 tuần"
+
+#: .\catalog\form.py:36
+msgid "Renewal date"
+msgstr "Ngày trả"
+
+#: .\catalog\form.py:37
+msgid "Enter a date between now and 4 weeks (default 3)."
+msgstr "Nhập ngày từ nay đến 4 tuần (mặc định là 3)."
+
+#: .\catalog\templates\author_confirm_delete.html:3
+#, fuzzy
+#| msgid "Author:"
+msgid "Delete Author"
+msgstr "Tác giả"
+
+#: .\catalog\templates\author_confirm_delete.html:3
+msgid "Are you sure you want to delete the author:"
+msgstr "Bạn có chắc chắn muốn xóa tác giả:"
 
 #: .\catalog\templates\base_generic.html:22
 msgid "Home"
@@ -90,6 +116,18 @@ msgstr "danh sách sách"
 msgid "There are no books in the library."
 msgstr "Không có sách nào trong thư viên"
 
+#: .\catalog\templates\book_renew_librarian.html:3
+msgid "Renew:"
+msgstr ""
+
+#: .\catalog\templates\book_renew_librarian.html:4
+msgid "Borrower:"
+msgstr ""
+
+#: .\catalog\templates\book_renew_librarian.html:5
+msgid "Due date:"
+msgstr ""
+
 #: .\catalog\templates\index.html:4
 msgid "Local Library Home"
 msgstr "Trang chủ thư viện"
@@ -133,3 +171,73 @@ msgstr "Tác giả"
 #: .\catalog\templates\index.html:14
 msgid "You have visited this page"
 msgstr "Bạn đã tham gia trang"
+
+#: .\catalog\templates\registration\logged_out.html:3
+msgid "Logged out!"
+msgstr "Đăng xuất"
+
+#: .\catalog\templates\registration\logged_out.html:4
+msgid "Click here to login again."
+msgstr "Bấm vào đây để đăng nhập lại"
+
+#: .\catalog\templates\registration\login.html:4
+msgid "Your username and password didn't match. Please try again."
+msgstr "Tên người dùng và mật khẩu của bạn không khớp. Vui lòng thử lại."
+
+#: .\catalog\templates\registration\login.html:8
+msgid ""
+"Your account doesn't have access to this page. To proceed,please login with "
+"an account that has access."
+msgstr ""
+"Tài khoản của bạn không có quyền truy cập vào trang này. Để tiếp tục, vui "
+"lòng đăng nhập bằng một tài khoản có quyền truy cập."
+
+#: .\catalog\templates\registration\login.html:10
+msgid "Please login to see this page."
+msgstr "Làm ơn đăng nhập để xem trang này"
+
+#: .\catalog\templates\registration\login.html:29
+msgid "Lost password?"
+msgstr "Mất mật khẩu?"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:4
+msgid "Please enter (and confirm) your new password."
+msgstr "Vui lòng nhập (và xác nhận) mật khẩu mới của bạn."
+
+#: .\catalog\templates\registration\password_reset_confirm.html:9
+msgid "New password:"
+msgstr "Mật khâu mới:"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:14
+msgid "Confirm password:"
+msgstr "Xác nhận mật khẩu"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:27
+msgid "Password reset failed"
+msgstr "Đặt lại mật khẩu không thành công"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:28
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.Please request a new password reset."
+msgstr ""
+"Liên kết đặt lại mật khẩu không hợp lệ, có thể vì nó đã bị đã sử dụng. Vui "
+"lòng yêu cầu đặt lại mật khẩu mới."
+
+#: .\catalog\templates\registration\password_reset_done.html:4
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived ina few minutes, check your spam folder."
+msgstr "sẽ đến sau vài phút nữa, hãy kiểm tra thư mục thư rác của bạn."
+
+#: .\catalog\templates\registration\password_reset_email.html:4
+msgid "Someone asked for a password reset for email"
+msgstr "Có người yêu cầu đặt lại mật khẩu cho email"
+
+#: .\catalog\templates\registration\password_reset_email.html:6
+msgid "Follow the link below to reset your password:"
+msgstr "Hãy theo liên kết dưới đây để đặt lại mật khẩu của bạn:"
+
+#: .\catalog\templates\registration\password_reset_email.html:12
+msgid "If you did not request a password reset, please ignore this email."
+msgstr "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này."
