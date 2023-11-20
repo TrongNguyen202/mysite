@@ -1,7 +1,9 @@
 {% extends "base_generic.html" %}
+
 {% load i18n %}
 {% block content %}
 <h1>{% trans "Book List" %}</h1>
+
 {% if my_book_list %}
 <ul>
     {% for book in my_book_list %}
@@ -9,6 +11,10 @@
     {% endfor %}
 </ul>
 {% else %}
+
+
 <p>{% trans "There are no books in the library." %}</p>
+
+
 {% endif %}
 {% endblock %}
