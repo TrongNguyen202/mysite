@@ -48,7 +48,6 @@ class Book_Detail(APIView):
     def get(self, request, id):
         book = self.get_object(id)
         data = BookSerializers(book).data
-
         return Response(data)
 
     def put(self, request, id):
