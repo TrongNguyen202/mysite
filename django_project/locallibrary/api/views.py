@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from rest_framework.pagination import PageNumberPagination
-from .serializers import BookSerializers
-from catalog.models import Book
+from .serializers import BookSerializers, BookInsSerializers,RenewBookSerializer
+from catalog.models import Book,BookInstance
 # Create your views here.
 
 class BookList(APIView):
@@ -68,3 +68,37 @@ class Book_Detail(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except RestrictedError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        
+class AllBorrowed(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, request):
+        bookins = BookInstance.objects.all()
+        data = BookInsSerializers(bookins, many=True).data
+        return Response(data)
+
+
+class RenewBook(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get_object(self, pk):
+        try:
+            return BookInstance.objects.get(pk=pk)
+        except BookInstance.DoesNotExist:
+            raise Http404
+    def has_permission(self, request, book_instance):
+        
+        return request.user.has_perm('catalog.can_mark_returned')
+    def post(self, request, pk):
+        book_instance = self.get_object(pk)
+
+        
+        if not self.has_permission(request, book_instance):
+            return Response({"error": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+
+        serializer = RenewBookSerializer(book_instance, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
